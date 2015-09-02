@@ -1,0 +1,4 @@
+dist/
+test/
+example.js
+.travis.yml
