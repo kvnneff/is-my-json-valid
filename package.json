@@ -10,10 +10,15 @@
     "xtend": "^4.0.0"
   },
   "devDependencies": {
-    "tape": "^2.13.4"
+    "browserify": "^11.0.1",
+    "tape": "^2.13.4",
+    "uglifyify": "^3.0.1"
   },
   "scripts": {
-    "test": "tape test/*.js"
+    "test": "tape test/*.js",
+    "dist": "browserify index.js -o dist/imjv.js -s imjv",
+    "dist-min": "browserify index.js -o dist/imjv-min.js -s imjv -g uglifyify",
+    "preversion": "npm run dist && npm run dist-min"
   },
   "repository": {
     "type": "git",
